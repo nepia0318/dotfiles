@@ -1,0 +1,9 @@
+### all ignore ###
+/*
+/.**
+
+### not ignore ###
+!/.gitignore
+!/.zshrc
+!/ubuntu-wsl/
+!/ubuntu-wsl/**
