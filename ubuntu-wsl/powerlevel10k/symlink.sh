@@ -16,15 +16,15 @@ log_success () {
 
 
 # target base
-TARGET_WSL_CONF="/etc/wsl.conf"
+TARGET_SETTINGS_JSON="${HOME}/.p10k.zsh"
 
-mkdir -p "$(dirname "$TARGET_WSL_CONF")"
+mkdir -p "$(dirname "$TARGET_P10K_ZSH")"
 
-if [ -e "$TARGET_WSL_CONF" ]; then
-    sudo cp "$TARGET_WSL_CONF" "${TARGET_SETTINGS_JSON}_buckup"
+if [ -e "$TARGET_P10K_ZSH" ]; then
+    cp "$TARGET_P10K_ZSH" "${TARGET_SETTINGS_JSON}_buckup"
 fi
 
-sudo ln -fns "${FILE_DIR}/wsl.conf" "$TARGET_WSL_CONF"
+ln -fns "${FILE_DIR}/.p10k.zsh" "$TARGET_P10K_ZSH"
 
 # sucess
 log_success "${FILE_DIR_BASE}"

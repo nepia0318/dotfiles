@@ -27,6 +27,3 @@ github = "zdharma/fast-syntax-highlighting"
 
 [plugins.powerlevel10k]
 github = "romkatv/powerlevel10k"
-
-[plugins.enhancd]
-github = "b4b4r07/enhancd"
