@@ -16,7 +16,7 @@ log_success () {
 
 
 # target base
-TARGET_BASE="${HOME}/.config/${FILE_DIR_BASE}"
+TARGET_BASE="${XDG_CONFIG_HOME:-${HOME}/.config}/${FILE_DIR_BASE}"
 EXCEPT_FILES=("$(basename "$0")")
 
 find "$FILE_DIR" -type f -name '???*' -print0 | while IFS= read -r -d '' file; do
