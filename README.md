@@ -15,4 +15,10 @@ sudo chsh "${USER}" -s "$(which zsh)"
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt install git
+
+# Install packages and create symbliclink
+source dotfiles/ubuntu-wsl/init.sh
+
+# Setting zsh settings manually
+source ~/.zshrc
 ```
