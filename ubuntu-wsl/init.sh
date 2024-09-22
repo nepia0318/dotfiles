@@ -33,7 +33,7 @@ log_success "source .zshenv"
 # install.sh
 log_begin "install.sh"
 
-"${FILE_DIR}/install.sh"
+"${FILE_DIR}/scripts/install.sh"
 
 log_success "install.sh"
 
