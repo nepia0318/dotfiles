@@ -16,7 +16,7 @@ if [ -e "${TARGET_ZSHENV}" ]; then
     cp "${TARGET_ZSHENV}" "${TARGET_ZSHENV}_buckup"
 fi
 
-ln -fns "${FILE_DIR}/.zshrc" "${TARGET_ZSHENV}"
+ln -fns "${FILE_DIR}/.zshenv" "${TARGET_ZSHENV}"
 
 # sucess
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[symlink]" ": " "Successfully done " ".zshenv"
