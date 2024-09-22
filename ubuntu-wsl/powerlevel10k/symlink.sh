@@ -16,7 +16,7 @@ log_success () {
 
 
 # target base
-TARGET_SETTINGS_JSON="${HOME}/.p10k.zsh"
+TARGET_P10K_ZSH="${HOME}/.p10k.zsh"
 
 mkdir -p "$(dirname "$TARGET_P10K_ZSH")"
 
