@@ -1,0 +1,23 @@
+# lsコマンドのalias関連
+alias ls='ls --color=auto -G'
+alias la='ls -lAG'
+alias ll='ls -lG'
+alias l='ls -LAHG'
+
+# clearコマンドのalias関連
+alias c='clear'
+alias cc='c &&'
+
+alias ..='cd ..'
+alias ...='cd ../..'
+
+alias pbcopy='xsel --clipboard --input'
+alias pbpaste='xsel --clipboard --output'
+alias open='wsl-open'
+alias fzfv="fzf --preview 'fzf-preview.sh {}'"
+alias fzff="fzf --height 40% --layout reverse --info inline --border \
+    --preview 'file {}' --preview-window up,1,border-horizontal \
+    --bind 'ctrl-/:change-preview-window(50%|hidden|)' \
+    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'"
+
+function gi() { curl -sLw \"\\\n\" "https://www.toptal.com/developers/gitignore/api/$@" ;}

@@ -11,7 +11,7 @@ printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[on_zsh]" ": " "Begin " "on_zsh
 
 "${FILE_DIR}/../zsh/symlink_init.sh"
 # shellcheck source=/dev/null
-source "${HOME}/.zshrc"
+source "${HOME}/.zsh/.zshenv"
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[on_zsh]" ": " "Successfully done " "source .zshrc"
 

@@ -1,7 +1,6 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-echo "test1"
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -76,61 +75,34 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
+### split zsh
+ZSHHOME="${HOME}/.zsh"
+
+if [ -d $ZSHHOME -a -r $ZSHHOME -a \
+     -x $ZSHHOME ]; then
+
+    # Source the .profile.zsh file first
+    # profile_zsh="$ZSHHOME/profile.zsh"
+    # if [ -f "$profile_zsh" -o -h "$profile_zsh" ] && [ -r "$profile_zsh" ]; then
+    #     . "$profile_zsh"
+    # fi
+
+    # Source the remaining zsh files
+    for i in $ZSHHOME/*; do
+        if [ "$i" != "$profile_zsh" ]; then
+          [[ ${i##*/} = *.zsh ]] && [ \( -f $i -o -h $i \) -a -r $i ]  && . $i
+        fi
+    done
+fi
+
 . $HOME/.cargo/env
 fpath=($HOME/GitHub/zsh-completions/src $fpath)
 
-# lsコマンドのalias関連
-alias ls='ls --color=auto -G'
-alias la='ls -lAG'
-alias ll='ls -lG'
-alias l='ls -LAHG'
-
-# clearコマンドのalias関連
-alias c='clear'
-alias cc='c &&'
-
-alias ..='cd ..'
-alias ...='cd ../..'
-
-alias pbcopy='xsel --clipboard --input'
-alias pbpaste='xsel --clipboard --output'
-alias open='wsl-open'
-alias fzfv="fzf --preview 'fzf-preview.sh {}'"
-alias fzff="fzf --height 40% --layout reverse --info inline --border \
-    --preview 'file {}' --preview-window up,1,border-horizontal \
-    --bind 'ctrl-/:change-preview-window(50%|hidden|)' \
-    --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'"
-
-function gi() { curl -sLw \"\\\n\" "https://www.toptal.com/developers/gitignore/api/$@" ;}
-
-export EDITOR=nvim
-export MANPATH="/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH"
-export INFOPATH="/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH"
-export CMAKE_PREFIX_PATH="/home/yuki/GitHub/opengv/build:$CMAKE_PREFIX_PATH"
-export FZF_DEFAULT_COMMAND='fd --type file --color=always'
-export FZF_DEFAULT_OPTS='--ansi'
-export FLYCTL_INSTALL="/home/yuki/.fly"
-export ENHANCD_COMMAND=ecd
-
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="/usr/local/texlive/2021/bin/x86_64-linux:$PATH"
-export PATH="/usr/local/cuda-12.2/bin:$PATH"
-export PATH="$PATH:/opt/nvim-linux64/bin"
-export PATH="$PATH:$FLYCTL_INSTALL/bin"
-
-export PATH="/usr/lib/jvm/graalvm-jdk-21.0.4+8.1/bin:$PATH"
-
-export PATH="$PATH:/mnt/c/Users/widef/AppData/Local/Programs/Microsoft VS Code/bin"
-
-echo "test2"
 source /home/yuki/GitHub/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 [ -f ~/GitHub/fzf/.fzf.zsh ] && source ~/GitHub/fzf/.fzf.zsh
 
-echo "test3"
 eval "$(zoxide init zsh)"
-echo "test4"
 eval "$(sheldon source)"
 
-echo "test5"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
