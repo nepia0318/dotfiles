@@ -5,6 +5,8 @@ set -eu
 # Info
 _FILE_DIR=$(cd "$(dirname "$0")" || exit; pwd)
 readonly FILE_DIR=${_FILE_DIR}
+_FILE_NAME="$(basename "$0")"
+readonly FILE_NAME=${_FILE_NAME}
 
 log_begin () {
     printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[${FILE_NAME}]" ": " "Begin " "$1"
