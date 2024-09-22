@@ -21,7 +21,7 @@ TARGET_P10K_ZSH="${HOME}/.p10k.zsh"
 mkdir -p "$(dirname "$TARGET_P10K_ZSH")"
 
 if [ -e "$TARGET_P10K_ZSH" ]; then
-    cp "$TARGET_P10K_ZSH" "${TARGET_SETTINGS_JSON}_buckup"
+    cp "$TARGET_P10K_ZSH" "${TARGET_P10K_ZSH}_buckup"
 fi
 
 ln -fns "${FILE_DIR}/.p10k.zsh" "$TARGET_P10K_ZSH"
