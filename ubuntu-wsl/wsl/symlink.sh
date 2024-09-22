@@ -6,7 +6,7 @@ set -eu
 _FILE_DIR="$(cd "$(dirname "$0")"; pwd)"
 readonly FILE_DIR=$_FILE_DIR
 _FILE_DIR_BASE="$(basename "$FILE_DIR")"
-readonly FILE_DIR_BASE=_FILE_DIR_BASE
+readonly FILE_DIR_BASE=${_FILE_DIR_BASE}
 _FILE_NAME="$(basename "$0")"
 readonly FILE_NAME=${_FILE_NAME}
 
