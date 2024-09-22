@@ -2,7 +2,11 @@
 
 ## Ubuntu (WSL)
 
-``` Shell
+### At least
+
+Only use Ubuntu shell.
+
+``` shell
 # Just in case
 sudo apt update
 sudo apt upgrade
@@ -21,4 +25,12 @@ sudo dotfiles/ubuntu-wsl/init.sh
 
 # Setting zsh settings manually
 source ~/.zshrc
+```
+
+### Remove windows $PATH
+
+Addition to the above, restart WSL.
+
+``` powershell
+wsl -t Ubuntu-24.04 (or other version)
 ```
