@@ -25,6 +25,8 @@ log_success () {
 log_begin "rustup"
 
 curl https://sh.rustup.rs -sSf | sh -s -- -y
+# shellcheck source=/dev/null
+. "${HOME}/.cargo/env"
 
 log_success "rustup"
 

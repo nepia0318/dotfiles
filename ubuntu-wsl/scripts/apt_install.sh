@@ -21,8 +21,8 @@ log_begin "apt_install"
 # Add apt repository
 log_begin "apt update"
 
-sudo add-apt-repository ppa:longsleep/golang-backports
-sudo add-apt-repository ppa:wslutilities/wslu
+sudo add-apt-repository -y ppa:longsleep/golang-backports
+sudo add-apt-repository -y ppa:wslutilities/wslu
 sudo apt update
 
 log_success "apt update"
