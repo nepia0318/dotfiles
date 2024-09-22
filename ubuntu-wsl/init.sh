@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/bin/bash
 
 readonly FILE_DIR=$(cd $(dirname $0); pwd)
 readonly FILE_DIR_BASE=$(basename ${FILE_DIR})
