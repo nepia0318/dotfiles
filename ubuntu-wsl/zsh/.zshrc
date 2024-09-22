@@ -14,7 +14,7 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
 
     # Source the remaining zsh files
     for i in $ZSHHOME/.*; do
-        if [ "$i" != "$PROFILE_ZSH" ] && [ "$i" != "$PROFILE_ZSH" ]; then
+        if [ "$i" != "$PROFILE_ZSH" ] && [ "$i" != "$LOGIN_ZSH" ]; then
           [[ ${i##*/} = *.zsh ]] && [ \( -f $i -o -h $i \) -a -r $i ]  && . $i
         fi
     done
