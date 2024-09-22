@@ -10,7 +10,7 @@ readonly FILE_DIR_BASE=${_FILE_DIR_BASE}
 # printf "\033[32m%s\033[93m%s\033[m%s\n" "[symlink]" "begin" ": ${FILE_DIR_BASE}"
 
 # target base
-TARGET_BASE="${HOME}/temp/symlink_test"
+TARGET_BASE="${HOME}"
 EXCEPT_FILES=("$(basename "$0")")
 
 find "$FILE_DIR" -type f -name '???*' -print0 | while IFS= read -r -d '' file; do
