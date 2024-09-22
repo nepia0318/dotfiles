@@ -18,7 +18,7 @@ printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[on_zsh]" ": " "Successfully do
 # install.sh
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[on_zsh]" ": " "Begin " "install.sh"
 
-"${FILE_DIR}/scripts/install.sh"
+"${FILE_DIR}/install.sh"
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[on_zsh]" ": " "Successfully done " "install.sh"
 
