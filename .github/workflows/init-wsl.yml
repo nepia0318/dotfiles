@@ -13,5 +13,7 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Execute init.sh
-      run: source ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+      run: |
+        sudo apt-get install zsh
+        source ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}
