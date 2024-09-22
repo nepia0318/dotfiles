@@ -6,6 +6,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 # Valiable Settings
 export EDITOR=nvim
+export AQUA_GLOBAL_CONFIG="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/aqua.yaml"
 export FZF_DEFAULT_COMMAND='fd --type file --color=always'
 export FZF_DEFAULT_OPTS='--ansi'
 export FLYCTL_INSTALL="/home/yuki/.fly"

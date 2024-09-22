@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v4
 
     - name: Execute init.sh
-      run: ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+      run: source ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
 
     - name: Execute on_zsh.sh
-      run: ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/on_zsh.sh
+      run: source ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/on_zsh.sh
       shell: zsh {0}
