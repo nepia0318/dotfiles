@@ -1,15 +1,15 @@
 #!/bin/bash
 
-sudo apt install build-essential
-sudo apt install wget
+sudo apt-get install -y build-essential
+sudo apt-get install -y wget
 
 # golang
 sudo add-apt-repository ppa:longsleep/golang-backports
 sudo apt update
-sudo apt install golang-go
+sudo apt-get install -y golang-go
 
 # Java
-sudo apt install default-jdk
+sudo apt-get install -y default-jdk
 
 # aqua
 mkdir -p "$HOME"/Downloads
@@ -30,7 +30,7 @@ mv "$HOME"/Downloads/aqua "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}
 aqua i
 
 # wslu
-sudo apt install gnupg2 apt-transport-https
+sudo apt-get install -y gnupg2 apt-transport-https
 wget -O - https://pkg.wslutiliti.es/public.key | sudo gpg -o /usr/share/keyrings/wslu-archive-keyring.pgp --dearmor
 # shellcheck source=/dev/null
 echo "deb [signed-by=/usr/share/keyrings/wslu-archive-keyring.pgp] https://pkg.wslutiliti.es/debian \

@@ -6,7 +6,7 @@ readonly FILE_DIR=$_FILE_DIR
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[init]" ": " "Begin " "init.sh"
 
 # zsh
-sudo apt install zsh
+sudo apt-get install -y zsh
 chsh -s /bin/bash
 "${FILE_DIR}/zsh/symlink_init.sh"
 
