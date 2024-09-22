@@ -17,4 +17,4 @@ jobs:
 
     - name: Execute on_zsh.sh
       run: ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/on_zsh.sh
-      shell: zsh
+      shell: zsh {0}
