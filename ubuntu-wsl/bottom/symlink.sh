@@ -4,9 +4,9 @@ set -eu
 
 # Library/App info
 _FILE_DIR="$(cd "$(dirname "$0")"; pwd)"
-readonly FILE_DIR=$_FILE_DIR
+readonly FILE_DIR=${_FILE_DIR}
 _FILE_DIR_BASE="$(basename "$FILE_DIR")"
-readonly FILE_DIR_BASE=_FILE_DIR_BASE
+readonly FILE_DIR_BASE=${_FILE_DIR_BASE}
 # printf "\033[32m%s\033[93m%s\033[m%s\n" "[symlink]" "begin" ": ${FILE_DIR_BASE}"
 
 # target base
