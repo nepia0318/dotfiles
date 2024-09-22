@@ -38,7 +38,7 @@ printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully d
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "aqua"
 
 mkdir -p "${HOME}/Downloads"
-wget -O "$HOME"/Downloads/aqua_linux_amd64.tar.gz \
+wget -O "${HOME}/Downloads/aqua_linux_amd64.tar.gz" \
 "$( \
     curl -s https://api.github.com/repos/aquaproj/aqua/releases/latest \
     | grep "browser_download_url" | grep "aqua_linux_amd64" \
@@ -46,10 +46,10 @@ wget -O "$HOME"/Downloads/aqua_linux_amd64.tar.gz \
     | tr -d '\" ' \
 )"
 
-tar -zxvf "${HOME}/Downloads/aqua_linux_amd64.tar.gz"
+tar -zxvf "${HOME}/Downloads/aqua_linux_amd64.tar.gz" -C "${HOME}/Downloads"
 
 mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
-mv "$HOME"/Downloads/aqua "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
+mv "${HOME}/Downloads/aqua" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
 
 aqua i
 
