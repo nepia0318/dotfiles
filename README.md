@@ -1,8 +1,10 @@
 # dotfiles
 
-## Ubuntu (WSL)
+## for OS
 
-### At least
+### Ubuntu (WSL)
+
+#### At least
 
 Only use Ubuntu shell.
 
@@ -27,10 +29,20 @@ sudo dotfiles/ubuntu-wsl/init.sh
 source ~/.zshrc
 ```
 
-### Remove windows $PATH
+#### Remove windows $PATH
 
 Addition to the above, restart WSL.
 
 ``` powershell
 wsl -t Ubuntu-24.04 (or other version)
+```
+
+## Others
+
+### neovim
+
+Execute command manually on neovim.
+
+``` lua
+:JetPackSync
 ```
