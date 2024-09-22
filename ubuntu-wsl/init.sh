@@ -13,6 +13,8 @@ printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[init]" ": " "Begin " "zsh init
 sudo apt-get install -y zsh
 sudo chsh "${USER}" -s "$(which zsh)"
 "${FILE_DIR}/zsh/symlink_init.sh"
+# shellcheck source=/dev/null
+source "${HOME}/.zshrc"
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "zsh initialization"
 
