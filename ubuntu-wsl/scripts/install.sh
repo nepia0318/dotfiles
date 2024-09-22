@@ -83,7 +83,7 @@ printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully d
 # Rust/Cargo
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "Rust / Cargo"
 
-curl https://sh.rustup.rs -sSf | sh
+curl https://sh.rustup.rs -sSf | sh -y
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "Rust / Cargo"
 
