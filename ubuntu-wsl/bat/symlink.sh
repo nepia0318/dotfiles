@@ -22,6 +22,11 @@ find $FILE_DIR -type f -name '???*' -print0 | while IFS= read -r -d '' file; do
     rel_path=${file#${FILE_DIR}/}
     target_dir="${TARGET_BASE}/$(dirname $rel_path)"
     mkdir -p $target_dir
+
+    if [ -e "${TARGET_BASE}/${rel_path}" ]; then
+        cp "${TARGET_BASE}/${rel_path}" "${TARGET_BASE}/${rel_path}_buckup"
+    fi
+
     ln -fns $file "${TARGET_BASE}/${rel_path}"
 done
 

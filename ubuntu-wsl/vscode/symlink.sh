@@ -11,6 +11,11 @@ readonly FILE_DIR_BASE=$(basename $FILE_DIR)
 TARGET_SETTINGS_JSON="${HOME}/temp/symlink_test/.vscode-server/data/Machine/settings.json"
 
 mkdir -p $(dirname $TARGET_SETTINGS_JSON)
+
+if [ -e $TARGET_SETTINGS_JSON ]; then
+    cp $TARGET_SETTINGS_JSON "${TARGET_SETTINGS_JSON}_buckup"
+fi
+
 ln -fns "${FILE_DIR}/settings.json" $TARGET_SETTINGS_JSON
 
 # sucess
