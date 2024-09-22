@@ -2,10 +2,14 @@
 
 set -eu
 
-# Library/App info
+# Info
 _FILE_DIR="$(cd "$(dirname "$0")"; pwd)"
 readonly FILE_DIR=${_FILE_DIR}
-# printf "\033[32m%s\033[93m%s\033[m%s\n" "[symlink]" "begin" ": ${FILE_DIR_BASE}"
+
+log_success () {
+    printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[${FILE_NAME}]" ": " "Successfully done " "$1"
+}
+
 
 # .zshenv
 TARGET_ZSHENV="${HOME}/.zsh/.zshenv"
@@ -19,4 +23,4 @@ fi
 ln -fns "${FILE_DIR}/.zshenv" "${TARGET_ZSHENV}"
 
 # sucess
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[symlink]" ": " "Successfully done " ".zshenv"
+log_success ".zshenv"

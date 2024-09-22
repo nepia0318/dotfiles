@@ -2,53 +2,43 @@
 
 set -eu
 
-# Library/App info
+# Info
 _FILE_DIR="$(cd "$(dirname "$0")"; pwd)"
 readonly FILE_DIR=${_FILE_DIR}
+_FILE_NAME="$(basename "$0")"
+readonly FILE_NAME=${_FILE_NAME}
+
+log_begin () {
+    printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[${FILE_NAME}]" ": " "Begin " "$1"
+}
+
+log_success () {
+    printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[${FILE_NAME}]" ": " "Successfully done " "$1"
+}
 
 
-# build-essential
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "build-essential"
-sudo apt-get install -y build-essential
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "build-essential"
+# apt install
+"${FILE_DIR}/apt_install.sh"
 
 
-# wget
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "wget"
+# Rust/Cargo
+log_begin "rustup"
 
-sudo apt-get install -y wget
+curl https://sh.rustup.rs -sSf | sh -s -- -y
 
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "wget"
-
-
-# jq
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "jq"
-
-sudo apt-get install -y jq
-
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "jq"
+log_success "rustup"
 
 
-# golang
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "Go / golang-go"
+# sheldon
+log_begin "sheldon"
 
-sudo add-apt-repository ppa:longsleep/golang-backports
-sudo apt update
-sudo apt-get install -y golang-go
+cargo install sheldon
 
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "Go / golang-go"
-
-
-# Java
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "Java / default-jdk"
-
-sudo apt-get install -y default-jdk
-
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "Java / default-jdk"
+log_success "sheldon"
 
 
 # aqua
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "aqua"
+log_begin "aqua"
 
 mkdir -p "${HOME}/Downloads"
 wget -O "${HOME}/Downloads/aqua_linux_amd64.tar.gz" \
@@ -58,7 +48,6 @@ wget -O "${HOME}/Downloads/aqua_linux_amd64.tar.gz" \
     | cut -d : -f 2,3 \
     | tr -d '\" ' \
 )"
-
 tar -zxvf "${HOME}/Downloads/aqua_linux_amd64.tar.gz" -C "${HOME}/Downloads"
 
 mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
@@ -67,30 +56,4 @@ ln -fns "${FILE_DIR}/aqua.yaml" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/
 
 aqua i
 
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "aqua"
-
-
-# wslu
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "wslu"
-
-sudo add-apt-repository ppa:wslutilities/wslu
-sudo apt update
-sudo apt install wslu
-
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "wslu"
-
-
-# Rust/Cargo
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "Rust / Cargo"
-
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "Rust / Cargo"
-
-
-# sheldon
-printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "sheldon"
-
-cargo install sheldon
-
-printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "sheldon"
+log_success "aqua"
