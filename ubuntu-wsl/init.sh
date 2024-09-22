@@ -35,5 +35,8 @@ done
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "symlink.sh"
 
+# shellcheck source=/dev/null
+source "${HOME}/.zshrc"
+
 # end
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "init.sh"
