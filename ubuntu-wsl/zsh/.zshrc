@@ -3,8 +3,10 @@ ZSHHOME="${HOME}/.zsh"
 PROFILE_ZSH="$ZSHHOME/.zprofile"
 LOGIN_ZSH="$ZSHHOME/.zlogin"
 
+EXCEPT_FILES=("$PROFILE_ZSH" "$LOGIN_ZSH" "**/*_backup")
+
 if [ -d $ZSHHOME -a -r $ZSHHOME -a \
-     -x $ZSHHOME ]; then
+    -x $ZSHHOME ]; then
 
 
     # Source the .zprofile file first
@@ -14,9 +16,13 @@ if [ -d $ZSHHOME -a -r $ZSHHOME -a \
 
     # Source the remaining zsh files
     for i in $ZSHHOME/.*; do
-        if [ "$i" != "$PROFILE_ZSH" ] && [ "$i" != "$LOGIN_ZSH" ]; then
-          [[ ${i##*/} = *.zsh ]] && [ \( -f $i -o -h $i \) -a -r $i ]  && . $i
-        fi
+        for except_file in "${EXCEPT_FILES[@]}"; do
+            if [[ $basename == "$except_file" ]]; then
+                continue 2
+            fi
+        done
+
+        [[ ${i##*/} = *.zsh ]] && [ \( -f $i -o -h $i \) -a -r $i ]  && . $i
     done
 
         # Source the .zlogin file last
