@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt install build-essential
+sudo apt install wget
 
 # golang
 sudo add-apt-repository ppa:longsleep/golang-backports
@@ -9,6 +10,24 @@ sudo apt install golang-go
 
 # Java
 sudo apt install default-jdk
+
+# aqua
+mkdir -p $HOME/Downloads
+
+wget -O $HOME/Downloads/aqua_linux_amd64.tar.gz \
+$( \
+    curl -s https://api.github.com/repos/aquaproj/aqua/releases/latest \
+    | grep "browser_download_url" | grep "aqua_linux_amd64" \
+    | cut -d : -f 2,3 \
+    | tr -d \" \
+)
+
+tar -zxvf $HOME/Downloads/aqua_linux_amd64.tar.gz
+
+mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
+mv $HOME/Downloads/aqua "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
+
+aqua i
 
 # wslu
 sudo apt install gnupg2 apt-transport-https
@@ -19,7 +38,9 @@ $(. /etc/os-release && echo "$VERSION_CODENAME") main" | sudo tee /etc/apt/sourc
 sudo apt update
 sudo apt install wslu
 
-# zsh
-# sudo apt install zsh
-# chsh -s /bin/bash
+# Rust/Cargo
+curl https://sh.rustup.rs -sSf | sh
+
+# sheldon
+cargo install sheldon
 
