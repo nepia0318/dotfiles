@@ -6,13 +6,9 @@ export XDG_STATE_HOME=$HOME/.local/state
 
 # Valiable Settings
 export EDITOR=nvim
-export MANPATH="/usr/local/texlive/2021/texmf-dist/doc/man:$MANPATH"
-export INFOPATH="/usr/local/texlive/2021/texmf-dist/doc/info:$INFOPATH"
-export CMAKE_PREFIX_PATH="/home/yuki/GitHub/opengv/build:$CMAKE_PREFIX_PATH"
 export FZF_DEFAULT_COMMAND='fd --type file --color=always'
 export FZF_DEFAULT_OPTS='--ansi'
 export FLYCTL_INSTALL="/home/yuki/.fly"
-export ENHANCD_COMMAND=ecd
 
 # PATH Settings
 export PATH="$PATH:$HOME/.local/bin"
