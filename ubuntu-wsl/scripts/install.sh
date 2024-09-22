@@ -12,6 +12,12 @@ sudo apt-get install -y wget
 
 printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "wget"
 
+printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "jq"
+
+sudo apt-get install -y jq
+
+printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully done " "jq"
+
 # golang
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "Go / golang-go"
 
@@ -32,14 +38,14 @@ printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[install]" ": " "Successfully d
 printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[install]" ": " "Begin " "aqua"
 
 mkdir -p "${HOME}/Downloads"
-aqua_url="$( \
+wget -O "$HOME"/Downloads/aqua_linux_amd64.tar.gz \
+"$( \
     curl -s https://api.github.com/repos/aquaproj/aqua/releases/latest \
     | grep "browser_download_url" | grep "aqua_linux_amd64" \
     | cut -d : -f 2,3 \
-    | tr -d \" \
+    | tr -d '\" ' \
 )"
 
-wget -O "${HOME}/Downloads/aqua_linux_amd64.tar.gz" "${aqua_url}"
 tar -zxvf "${HOME}/Downloads/aqua_linux_amd64.tar.gz"
 
 mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
