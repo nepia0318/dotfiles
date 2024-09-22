@@ -17,7 +17,7 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt install git
 
 # Install packages and create symbliclink
-sudo source dotfiles/ubuntu-wsl/init.sh
+source dotfiles/ubuntu-wsl/init.sh
 
 # Setting zsh settings manually
 source ~/.zshrc
