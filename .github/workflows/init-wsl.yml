@@ -14,3 +14,7 @@ jobs:
 
     - name: Execute init.sh
       run: ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+
+    - name: Execute on_zsh.sh
+      run: ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/on_zsh.sh
+      shell: zsh
