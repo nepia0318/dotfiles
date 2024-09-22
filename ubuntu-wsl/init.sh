@@ -15,6 +15,5 @@ ${FILE_DIR}/scripts/install.sh
 # symlink.sh
 find "${FILE_DIR}" -type f -name 'symlink.sh' -print0 | while IFS= read -r -d '' file; do
     basename=$(basename "$file")
-    if 
     zsh $file
 done
