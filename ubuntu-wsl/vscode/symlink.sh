@@ -21,7 +21,7 @@ TARGET_SETTINGS_JSON="${HOME}/.vscode-server/data/Machine/settings.json"
 mkdir -p "$(dirname "$TARGET_SETTINGS_JSON")"
 
 if [ -e "$TARGET_SETTINGS_JSON" ]; then
-    cp "$TARGET_SETTINGS_JSON" "${TARGET_SETTINGS_JSON}_buckup"
+    cp "$TARGET_SETTINGS_JSON" "${TARGET_SETTINGS_JSON}_backup"
 fi
 
 ln -fns "${FILE_DIR}/settings.json" "$TARGET_SETTINGS_JSON"

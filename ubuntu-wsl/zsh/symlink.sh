@@ -20,7 +20,7 @@ TARGET_ZSHRC="${HOME}/.zshrc"
 mkdir -p "$(dirname "$TARGET_ZSHRC")"
 
 if [ -e "${TARGET_ZSHRC}" ]; then
-    cp "${TARGET_ZSHRC}" "${TARGET_ZSHRC}_buckup"
+    cp "${TARGET_ZSHRC}" "${TARGET_ZSHRC}_backup"
 fi
 
 ln -fns "${FILE_DIR}/.zshrc" "${TARGET_ZSHRC}"
@@ -42,7 +42,7 @@ find "$FILE_DIR" -type f -name '???*' -print0 | while IFS= read -r -d '' file; d
     mkdir -p "$target_dir"
 
     if [ -e "${TARGET_BASE}/${rel_path}" ]; then
-        cp "${TARGET_BASE}/${rel_path}" "${TARGET_BASE}/${rel_path}_buckup"
+        cp "${TARGET_BASE}/${rel_path}" "${TARGET_BASE}/${rel_path}_backup"
     fi
 
     ln -fns "$file" "${TARGET_BASE}/${rel_path}"

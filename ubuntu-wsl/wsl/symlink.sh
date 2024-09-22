@@ -21,7 +21,7 @@ TARGET_WSL_CONF="/etc/wsl.conf"
 mkdir -p "$(dirname "$TARGET_WSL_CONF")"
 
 if [ -e "$TARGET_WSL_CONF" ]; then
-    sudo cp "$TARGET_WSL_CONF" "${TARGET_WSL_CONF}_buckup"
+    sudo cp "$TARGET_WSL_CONF" "${TARGET_WSL_CONF}_backup"
 fi
 
 sudo ln -fns "${FILE_DIR}/wsl.conf" "$TARGET_WSL_CONF"
