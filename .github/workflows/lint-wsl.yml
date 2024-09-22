@@ -1,0 +1,29 @@
+name: lint
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check init.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+
+      - name: Check .zshrc
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/zsh/.zshrc --exclude=SC2148,SC1090
+
+      - name: Check zsh/symlink_init.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/zsh/symlink_init.sh
+
+      - name: Check **/symlink.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/**/symlink.sh
+
+      - name: Check scripts/install.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/install.sh
