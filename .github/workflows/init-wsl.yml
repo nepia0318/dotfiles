@@ -14,6 +14,6 @@ jobs:
 
     - name: Execute init.sh
       run: |
-        sudo apt-get install zsh
+        echo $ZSH_NAME $ZSH_VERSION
         source ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}
