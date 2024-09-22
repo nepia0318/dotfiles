@@ -7,14 +7,19 @@ printf "\033[32m%s\033[m%s\033[93m%s\033[m%s\n" "[init]" ": " "Begin " "init.sh"
 
 # zsh
 sudo apt-get install -y zsh
-chsh -s /bin/bash
+sudo chsh "$USER" -s "$(which zsh)"
 "${FILE_DIR}/zsh/symlink_init.sh"
+printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "zsh initialization"
 
 # install.sh
 "${FILE_DIR}/scripts/install.sh"
+printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "install.sh"
 
 # symlink.sh
 find "${FILE_DIR}" -type f -name 'symlink.sh' -print0 | while IFS= read -r -d '' file; do
     # basename=$(basename "$file")
     "$file"
 done
+printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "symlink.sh"
+
+printf "\033[32m%s\033[m%s\033[96m%s\033[m%s\n" "[init]" ": " "Successfully done " "init.sh"
