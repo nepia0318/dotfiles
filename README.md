@@ -19,8 +19,8 @@ Variable list is below.
 
 | Name | Description | example |
 | ---- | ---- | ---- |
-| `VSCODE_PATH` | Path to VSCode | /mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin" |
-| `GIT_CREDENTIAL_MANAGER` | Path to Git Credential Manager | ex. /mnt/c/Program \\ Files/Git/mingw64/bin/git-credential-manager.exe |
+| `VSCODE_PATH` | Path to VSCode | "/mnt/c/Users/${WIN_USER}/AppData/Local/Programs/Microsoft VS Code/bin" |
+| `GIT_CREDENTIAL_MANAGER` | Path to Git Credential Manager | "/mnt/c/Program Files/Git/mingw64/bin/git-credential-manager.exe" |
 
 #### At least
 
