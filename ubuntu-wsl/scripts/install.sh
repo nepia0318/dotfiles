@@ -62,6 +62,8 @@ aqua i
 
 log_success "aqua"
 
+# fast-syntax-hilighting
+fast-theme zdharma
 
 # VSCode Extensions
 # If `code` command not installed, This flow is skiped.
