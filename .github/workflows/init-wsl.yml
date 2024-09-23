@@ -22,7 +22,7 @@ jobs:
         sudo apt install code
         code --version
 
-    - name: Execute init.sh (without VSCode)
+    - name: Execute init.sh
       run: |
         export VSCODE_PATH=""
         . ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
