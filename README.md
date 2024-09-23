@@ -10,7 +10,7 @@ Set `.zlocal`(any name) and load.
 
 ``` shell
 mkdir -p ~/.zsh
-touch .~/.zsh/.zlocal
+touch ~/.zsh/.zlocal
 vi ~/.zsh/.zlocal
 source ~/.zsh/.zlocal
 ```
