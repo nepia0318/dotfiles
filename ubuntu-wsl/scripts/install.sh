@@ -66,7 +66,7 @@ log_success "aqua"
 if command -v code &> /dev/null; then
     log_begin "VSCode"
 
-    "{FILE_DIR}/vscode_install.sh"
+    "${FILE_DIR}/vscode_install.sh"
 
     log_success "VSCode"
 else
