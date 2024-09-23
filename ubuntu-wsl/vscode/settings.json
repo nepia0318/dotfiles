@@ -1,5 +1,5 @@
 {
     "emmet.extensionsPath": [
-        "/home/yuki/settings"
-    ],
+        "${HOME}/settings"
+    ]
 }
