@@ -1,4 +1,4 @@
-name: "[ubuntu-wsl] Execution"
+name: "ubuntu-wsl"
 
 on:
   push:
@@ -7,7 +7,25 @@ on:
     branches: [main]
 
 jobs:
-  translations:
+  lint-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check init.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+
+      - name: Check **/symlink.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/**/symlink.sh
+
+      - name: Check scripts/apt_install.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/apt_install.sh
+
+      - name: Check scripts/install.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/install.sh
+
+  script-execution:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
