@@ -29,7 +29,9 @@ log_success "apt update"
 
 
 # apt install
-TARGET_PACKAGES=("build-essential" "libssl-dev" "wget" "jq" "golang-go" "default-jdk" "wslu")
+TARGET_PACKAGES=(
+    "build-essential" "libssl-dev" "wget" "jq" "xsel" "golang-go" "default-jdk" "wslu"
+)
 
 for pkg in "${TARGET_PACKAGES[@]}"
 do
