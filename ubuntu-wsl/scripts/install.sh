@@ -63,7 +63,7 @@ else
         | cut -d : -f 2,3 \
         | tr -d '\" ' \
     )"
-    tar -zxvf "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" -C "${AQUA_TEMP}"
+    tar -zxf "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" -C "${AQUA_TEMP}"
 
     mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
     mv "${AQUA_TEMP}/aqua" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
