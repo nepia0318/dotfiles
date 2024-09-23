@@ -1,5 +1,8 @@
 {
     "emmet.extensionsPath": [
-        "${HOME}/.vscode-server/data/Machine/snippets/emmet"
+        "${HOME}/.vscode-server/data/Machine/Emmet"
+    ],
+    "markdown-pdf.styles": [
+        "${HOME}/.vscode-server/data/Machine/Markdown_PDF/md2pdf.css"
     ]
 }
