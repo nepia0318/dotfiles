@@ -7,6 +7,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 # Valiable Settings
 export EDITOR=nvim
 export AQUA_GLOBAL_CONFIG="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/aqua.yaml"
+export AQUA_PROGRESS_BAR=true
 export FZF_DEFAULT_COMMAND='fd --type file --color=always'
 export FZF_DEFAULT_OPTS='--ansi'
 export FLYCTL_INSTALL="/home/yuki/.fly"
@@ -19,4 +20,4 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 export PATH="/usr/lib/jvm/graalvm-jdk-21.0.4+8.1/bin:$PATH"
 
-export PATH="$PATH:/mnt/c/Users/widef/AppData/Local/Programs/Microsoft VS Code/bin"
+export PATH="$PATH:$VSCODE_PATH
