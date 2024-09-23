@@ -42,19 +42,21 @@ log_success "sheldon"
 # aqua
 log_begin "aqua"
 
-mkdir -p "${HOME}/Downloads"
-wget -O "${HOME}/Downloads/aqua_linux_amd64.tar.gz" \
+AQUA_TEMP="${HOME}/Downloads/aqua_temp"
+mkdir -p "${AQUA_TEMP}"
+wget -O "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" \
 "$( \
     curl -s https://api.github.com/repos/aquaproj/aqua/releases/latest \
     | grep "browser_download_url" | grep "aqua_linux_amd64" \
     | cut -d : -f 2,3 \
     | tr -d '\" ' \
 )"
-tar -zxvf "${HOME}/Downloads/aqua_linux_amd64.tar.gz" -C "${HOME}/Downloads"
+tar -zxvf "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" -C "${AQUA_TEMP}"
 
 mkdir -p "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
-mv "${HOME}/Downloads/aqua" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
+mv "${AQUA_TEMP}/aqua" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin"
 ln -fns "${FILE_DIR}/aqua.yaml" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/aqua.yaml"
+rm -rf "${AQUA_TEMP}"
 
 aqua i
 
