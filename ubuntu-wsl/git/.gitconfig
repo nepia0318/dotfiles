@@ -1,0 +1,9 @@
+[user]
+	name = nepia
+	email = nepia0318@email.com
+[pull]
+	rebase = false
+[core]
+	editor = $EDITOR
+[credential]
+	helper = $GIT_CREDENTIAL_MANAGER_PATH
