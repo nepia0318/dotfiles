@@ -20,4 +20,4 @@ export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua
 
 export PATH="/usr/lib/jvm/graalvm-jdk-21.0.4+8.1/bin:$PATH"
 
-export PATH="$PATH:$VSCODE_PATH
+export PATH="$PATH:$VSCODE_PATH"
