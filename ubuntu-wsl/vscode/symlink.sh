@@ -17,7 +17,7 @@ log_success () {
 
 BASE_FILES=(
     "${FILE_DIR}/settings.json"
-    "${FILE_DIR}/emmet_snippets.json"
+    "${FILE_DIR}/emmet/snippets.json"
     "${FILE_DIR}/md2pdf.css"
 )
 
