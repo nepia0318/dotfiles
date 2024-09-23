@@ -62,5 +62,5 @@ wsl -t Ubuntu-24.04 (or other version)
 Execute command manually on neovim.
 
 ``` lua
-:JetPackSync
+:JetpackSync
 ```
