@@ -41,6 +41,7 @@ log_success "rustup"
 log_begin "sheldon"
 
 cargo install sheldon
+eval "$(sheldon source)"
 
 log_success "sheldon"
 
