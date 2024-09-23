@@ -50,8 +50,12 @@ log_success "symlink.sh"
 
 
 # fast-syntax-hilighting
+set +e
+
 eval "$(sheldon source)"
 fast-theme zdharma
+
+set -e
 
 # end
 log_success "init.sh"
