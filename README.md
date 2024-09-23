@@ -4,6 +4,24 @@
 
 ### Ubuntu (WSL)
 
+#### Set local environment valiables (Required, In advance)
+
+Set `.zlocal`(any name) and load.
+
+``` shell
+mkdir -p ~/.zsh
+touch .~/.zsh/.zlocal
+vi ~/.zsh/.zlocal
+source ~/.zsh/.zlocal
+```
+
+Variable list is below.
+
+| Name | Description | example |
+| ---- | ---- | ---- |
+| `VSCODE_PATH` | Path to VSCode | /mnt/c/Users/${USER}/AppData/Local/Programs/Microsoft VS Code/bin" |
+| `GIT_CREDENTIAL_MANAGER` | Path to Git Credential Manager | ex. /mnt/c/Program \\ Files/Git/mingw64/bin/git-credential-manager.exe |
+
 #### At least
 
 Only use Ubuntu shell.
