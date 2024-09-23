@@ -15,7 +15,7 @@ log_success () {
 }
 
 
-# target base
+# Settings.json
 TARGET_SETTINGS_JSON="${HOME}/.vscode-server/data/Machine/settings.json"
 
 mkdir -p "$(dirname "$TARGET_SETTINGS_JSON")"
@@ -25,6 +25,18 @@ if [ -e "$TARGET_SETTINGS_JSON" ]; then
 fi
 
 ln -fns "${FILE_DIR}/settings.json" "$TARGET_SETTINGS_JSON"
+
+
+# emmet/settings.json
+TARGET_EMMET_SNIPETTS_JSON="${HOME}/.vscode-server/data/Machine/snipetts/emmet/emmet_snipetts.json"
+
+mkdir -p "$(dirname "$TARGET_EMMET_SNIPETTS_JSON")"
+
+if [ -e "$TARGET_EMMET_SNIPETTS_JSON" ]; then
+    cp "$TARGET_EMMET_SNIPETTS_JSON" "${TARGET_EMMET_SNIPETTS_JSON}_backup"
+fi
+
+ln -fns "${FILE_DIR}/emmet_snipetts.json" "$TARGET_EMMET_SNIPETTS_JSON"
 
 # sucess
 log_success "${FILE_DIR_BASE}"

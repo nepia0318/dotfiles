@@ -1,5 +1,5 @@
 {
     "emmet.extensionsPath": [
-        "${HOME}/settings"
+        "${HOME}/.vscode-server/data/Machine/snippets/emmet"
     ]
 }
