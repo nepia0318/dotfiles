@@ -25,5 +25,6 @@ fi
 
 ln -fns "${FILE_DIR}/.gitconfig" "${TARGET_GITCONFIG}"
 
+
 # sucess
 log_success "${FILE_DIR_BASE}"
