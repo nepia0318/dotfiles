@@ -41,7 +41,6 @@ log_success "rustup"
 log_begin "sheldon"
 
 cargo install sheldon
-eval "$(sheldon source)"
 
 log_success "sheldon"
 
@@ -75,8 +74,6 @@ fi
 
 log_success "aqua"
 
-# fast-syntax-hilighting
-fast-theme zdharma
 
 # VSCode Extensions
 # If `code` command not installed, This flow is skiped.

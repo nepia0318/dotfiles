@@ -49,5 +49,9 @@ done
 log_success "symlink.sh"
 
 
+# fast-syntax-hilighting
+eval "$(sheldon source)"
+fast-theme zdharma
+
 # end
 log_success "init.sh"
