@@ -26,4 +26,4 @@ jobs:
         sudo apt update
         sudo apt install code
         code --version
-        sudo ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/vscode_install.sh
+        ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/vscode_install.sh
