@@ -25,6 +25,5 @@ jobs:
     - name: Execute init.sh (without VSCode)
       run: |
         export VSCODE_PATH=""
-        export GIT_CREDENTIAL_MANAGER=""
         . ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}

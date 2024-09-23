@@ -6,4 +6,4 @@
 [core]
 	editor = $EDITOR
 [credential]
-	helper = $GIT_CREDENTIAL_MANAGER_PATH
+	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
