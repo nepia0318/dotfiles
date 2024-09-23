@@ -15,6 +15,15 @@ jobs:
     - name: Install zsh
       run: sudo apt-get install -y zsh
 
-    - name: Execute init.sh
-      run: source ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
+    - name: Execute init.sh (without VSCode)
+      run: sudo ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}
+
+    - name: Excecute vscode_install.sh
+      run: |
+        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+        sudo apt update
+        sudo apt install code
+        code --version
+        sudo ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/vscode_install.sh

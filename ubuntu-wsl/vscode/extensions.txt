@@ -40,6 +40,7 @@ redhat.fabric8-analytics
 redhat.java
 shardulm94.trailing-spaces
 streetsidesoftware.code-spell-checker
+timonwong.shellcheck
 twxs.cmake
 visualstudioexptteam.intellicode-api-usage-examples
 visualstudioexptteam.vscodeintellicode

@@ -59,3 +59,17 @@ ln -fns "${FILE_DIR}/aqua.yaml" "${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/
 aqua i
 
 log_success "aqua"
+
+
+# VSCode Extensions
+# If `code` command not installed, This flow is skiped.
+if command -v code &> /dev/null; then
+    log_begin "VSCode"
+
+    "{FILE_DIR}/vscode_install.sh"
+
+    log_success "VSCode"
+else
+    echo "VSCode is not installed."
+    echo "Abort."
+fi
