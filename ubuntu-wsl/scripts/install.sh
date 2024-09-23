@@ -24,9 +24,15 @@ log_success () {
 # Rust/Cargo
 log_begin "rustup"
 
-curl https://sh.rustup.rs -sSf | sh -s -- -y
-# shellcheck source=/dev/null
-. "${HOME}/.cargo/env"
+if command -v rustup &> /dev/null; then
+    # Update rustup
+    rustup update
+else
+    #Install rustup
+    curl https://sh.rustup.rs -sSf | sh -s -- -y
+    # shellcheck source=/dev/null
+    . "${HOME}/.cargo/env"
+fi
 
 log_success "rustup"
 
