@@ -48,6 +48,7 @@ log_success "sheldon"
 # aqua
 log_begin "aqua"
 
+export AQUA_PROGRESS_BAR=false
 if command -v aqua &> /dev/null; then
     # Update aqua
     aqua -c "${AQUA_GLOBAL_CONFIG}" up
@@ -55,7 +56,7 @@ else
     # Install aqua
     AQUA_TEMP="${HOME}/Downloads/aqua_temp"
     mkdir -p "${AQUA_TEMP}"
-    wget -O "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" \
+    wget -q -O "${AQUA_TEMP}/aqua_linux_amd64.tar.gz" \
     "$( \
         curl -s https://api.github.com/repos/aquaproj/aqua/releases/latest \
         | grep "browser_download_url" | grep "aqua_linux_amd64" \
