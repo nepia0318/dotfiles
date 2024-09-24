@@ -4,6 +4,6 @@
 [pull]
 	rebase = false
 [core]
-	editor = $EDITOR
+	editor = nvim
 [credential]
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
