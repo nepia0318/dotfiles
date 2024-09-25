@@ -34,7 +34,7 @@ if command -v nodejs &> /dev/null; then
     sudo apt update
 else
     #Add nodejs PPA (`apt update` run in this script)
-    curl -fsSL https://deb.nodesource.com/setup_22.x | sh -s -- -y
+    curl -fsSL https://deb.nodesource.com/setup_22.x | sudo sh -s -- -y
 
 fi
 
