@@ -23,14 +23,29 @@ log_begin "apt update"
 
 sudo add-apt-repository -y ppa:longsleep/golang-backports
 sudo add-apt-repository -y ppa:wslutilities/wslu
-sudo apt update
+
+# Node.js/npm
+log_begin "nodejs setup"
+
+if command -v nodejs &> /dev/null; then
+    # Update nodejs
+    npm update
+    # Update apt separatory
+    sudo apt update
+else
+    #Add nodejs PPA (`apt update` run in this script)
+    curl -fsSL https://deb.nodesource.com/setup_22.x | sh -s -- -y
+
+fi
+
+log_success "nodejs setup"
 
 log_success "apt update"
 
 
 # apt install
 TARGET_PACKAGES=(
-    "build-essential" "libssl-dev" "wget" "jq" "xsel" "golang-go" "default-jdk" "wslu"
+    "build-essential" "libssl-dev" "wget" "jq" "xsel" "golang-go" "default-jdk" "wslu" "nodejs"
 )
 
 for pkg in "${TARGET_PACKAGES[@]}"
