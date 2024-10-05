@@ -4,6 +4,7 @@
 fpath=($HOME/GitHub/zsh-completions/src $fpath)
 [ -f ~/GitHub/fzf/.fzf.zsh ] && source ~/GitHub/fzf/.fzf.zsh
 
+source <(fzf --zsh)
 eval "$(zoxide init zsh)"
 eval "$(sheldon source)"
 
