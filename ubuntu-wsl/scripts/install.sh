@@ -20,8 +20,10 @@ log_success () {
 # apt install
 "${FILE_DIR}/apt_install.sh"
 
+
 # wsl-open
 sudo npm install -g wsl-open
+
 
 # Rust/Cargo
 log_begin "rustup"

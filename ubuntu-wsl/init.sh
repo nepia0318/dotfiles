@@ -25,7 +25,7 @@ log_begin "source .zshenv"
 
 # Load zshenv temporary
 # shellcheck source=/dev/null
-source "${FILE_DIR}/zsh/.zshenv"
+source "${FILE_DIR}/../repo/zsh/.zshenv"
 
 log_success "source .zshenv"
 
@@ -39,14 +39,11 @@ log_success "install.sh"
 
 
 # symlink.sh
-log_begin "symlink.sh"
+log_begin "dflink sync"
 
-find "${FILE_DIR}" -type f -name 'symlink.sh' -print0 | while IFS= read -r -d '' file; do
-    # basename=$(basename "$file")
-    "$file"
-done
+dflink sync
 
-log_success "symlink.sh"
+log_success "dflink sync"
 
 
 # fast-syntax-hilighting

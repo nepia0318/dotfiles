@@ -25,7 +25,7 @@ while read -r line
 do
     code --install-extension "${line}"
     log_success "vscode/${line}"
-done < "${FILE_DIR}/../vscode/extensions.txt"
+done < "${FILE_DIR}/vscode_extensions.txt"
 
 
 log_success "vscode_install"
