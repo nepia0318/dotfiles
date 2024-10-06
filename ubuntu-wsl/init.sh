@@ -25,7 +25,7 @@ log_begin "source .zshenv"
 
 # Load zshenv temporary
 # shellcheck source=/dev/null
-source "${FILE_DIR}/../repo/zsh/.zshenv"
+source "${FILE_DIR}/../repo/zsh/.zsh/.zshenv"
 
 log_success "source .zshenv"
 

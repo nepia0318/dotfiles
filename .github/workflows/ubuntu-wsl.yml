@@ -16,11 +16,11 @@ jobs:
       - name: Check init.sh
         run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
 
-      - name: Check **/symlink.sh
-        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/**/symlink.sh
-
       - name: Check scripts/apt_install.sh
         run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/apt_install.sh
+
+      - name: Check scripts/vscode_install.sh
+        run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/vscode_install.sh
 
       - name: Check scripts/install.sh
         run: shellcheck ${GITHUB_WORKSPACE}/ubuntu-wsl/scripts/install.sh
@@ -39,9 +39,12 @@ jobs:
         sudo apt update
         sudo apt install code
         code --version
+        git clone https://github.com/nepia0318/dflink.git
+        sudo ln -fnvs $path_to_repo/dflink/dflink /usr/local/bin/dflink
 
     - name: Execute init.sh
       run: |
+        export DFLINK_DOTFILES_ROOT="${GITHUB_WORKSPACE}}/repo"
         export VSCODE_PATH=""
         . ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}
