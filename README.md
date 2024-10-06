@@ -53,7 +53,7 @@ git clone https://github.com/nepia0318/dotfiles.git
 source ~/.zshrc
 ```
 
-#### Remove windows $PATH
+#### Remove $PATH derived from host windows
 
 Addition to the above, restart WSL.
 
