@@ -39,7 +39,7 @@ jobs:
         sudo apt update
         sudo apt install code
         code --version
-        git clone https://github.com/nepia0318/dflink.git ${GITHUB_WORKSPACE}/../
+        git clone https://github.com/nepia0318/dflink.git ${GITHUB_WORKSPACE}/../dflink
         sudo ln -fnvs ${GITHUB_WORKSPACE}/../dflink/dflink /usr/local/bin/dflink
         dflink --version
 
