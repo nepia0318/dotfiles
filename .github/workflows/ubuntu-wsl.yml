@@ -40,11 +40,12 @@ jobs:
         sudo apt install code
         code --version
         git clone https://github.com/nepia0318/dflink.git
-        sudo ln -fnvs $path_to_repo/dflink/dflink /usr/local/bin/dflink
+        sudo ln -fnvs $PWD/dflink/dflink /usr/local/bin/dflink
+        dflink --version
 
     - name: Execute init.sh
       run: |
-        export DFLINK_DOTFILES_ROOT="${GITHUB_WORKSPACE}}/repo"
+        export DFLINK_DOTFILES_ROOT="${GITHUB_WORKSPACE}/repo"
         export VSCODE_PATH=""
         . ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh
       shell: zsh {0}

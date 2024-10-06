@@ -1,5 +1,5 @@
 # lsコマンドのalias関連
-alias ls='ls --color=auto -G'
+# alias ls='ls --color=auto -G'
 alias la='ls -lAG'
 alias ll='ls -lG'
 alias l='ls -LAHG'
