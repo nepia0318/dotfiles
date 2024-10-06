@@ -5,8 +5,9 @@
 ### not ignore ###
 !/.gitignore
 !/renovate.json
-!/.zshrc
 !/.github/
 !/.github/**
+!/repo/
+!/repo/**
 !/ubuntu-wsl/
 !/ubuntu-wsl/**
