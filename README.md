@@ -19,6 +19,8 @@ Variable list is below.
 
 | Name | Description | example |
 | ---- | ---- | ---- |
+| `DFLINK_YAML` | Path to dflist.yml | "$path_to_repo/dotfiles/ubuntu-wsl/dflist.yml" |
+| `DFLINK_DOTFILES_ROOT` | Path to dotfiles repository | "$path_to_repo/dotfiles/repo" |
 | `VSCODE_PATH` | Path to VSCode | "/mnt/c/Users/${WIN_USER}/AppData/Local/Programs/Microsoft VS Code/bin" |
 
 #### At least

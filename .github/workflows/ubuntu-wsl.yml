@@ -30,7 +30,7 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install zsh & VSCode
+    - name: Install pre-requirements
       run: |
         sudo apt-get install -y zsh
         zsh --version
@@ -39,12 +39,13 @@ jobs:
         sudo apt update
         sudo apt install code
         code --version
-        git clone https://github.com/nepia0318/dflink.git
-        sudo ln -fnvs $PWD/dflink/dflink /usr/local/bin/dflink
+        git clone https://github.com/nepia0318/dflink.git ${GITHUB_WORKSPACE}/../
+        sudo ln -fnvs ${GITHUB_WORKSPACE}/../dflink/dflink /usr/local/bin/dflink
         dflink --version
 
     - name: Execute init.sh
       run: |
+        export DFLINK_YAML="${GITHUB_WORKSPACE}/ubuntu-wsl/dflist.yml"
         export DFLINK_DOTFILES_ROOT="${GITHUB_WORKSPACE}/repo"
         export VSCODE_PATH=""
         . ${GITHUB_WORKSPACE}/ubuntu-wsl/init.sh

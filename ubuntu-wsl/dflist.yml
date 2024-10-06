@@ -1,0 +1,103 @@
+packages:
+  - name: bottom
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/bottom
+            name: bottom.toml
+  - name: bat
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/bat
+            name: config
+  - name: gh
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/gh
+            name: config.yml
+  - name: nvim
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/nvim
+            name: init.lua
+      - path: lua
+        files:
+          - target_dir: ${HOME}/.config/nvim/lua
+            name: setup_plugin.lua
+          - target_dir: ${HOME}/.config/nvim/lua
+            name: base.lua
+      - path: lua/plugins
+        files:
+          - target_dir: ${HOME}/.config/nvim/lua/plugins
+            name: colorscheme.lua
+  - name: sheldon
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/sheldon
+            name: plugins.toml
+  - name: superfile
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.config/superfile
+            name: config.toml
+          - target_dir: ${HOME}/.config/superfile
+            name: hotkeys.toml
+  - name: zsh
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}
+            name: .zshrc
+      - path: .zsh
+        files:
+          - target_dir: ${HOME}/.zsh
+            name: .alias
+          - target_dir: ${HOME}/.zsh
+            name: .zlogin
+          - target_dir: ${HOME}/.zsh
+            name: .zprofile
+          - target_dir: ${HOME}/.zsh
+            name: .zshenv
+  - name: vscode
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.vscode-server/data/Machine
+            name: settings.json
+      - path: Emmet
+        files:
+          - target_dir: ${HOME}/.vscode-server/data/Machine/Emmet
+            name: snippets.json
+      - path: Markdown_PDF
+        files:
+          - target_dir: ${HOME}/.vscode-server/data/Machine/Markdown_PDF
+            name: md2pdf.css
+  - name: git
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}
+            name: .gitconfig
+  - name: powerlevel10k
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}
+            name: .p10k.zsh
+  - name: wsl
+    directories:
+      - path: .
+        files:
+          - target_dir: /etc
+            name: wsl.conf
+  - name: aqua
+    directories:
+      - path: .
+        files:
+          - target_dir: ${HOME}/.local/share/aquaproj-aqua
+            name: aqua.yaml
