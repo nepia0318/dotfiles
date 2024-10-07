@@ -45,7 +45,7 @@ log_success "apt update"
 
 # apt install
 TARGET_PACKAGES=(
-    "build-essential" "libssl-dev" "wget" "jq" "xsel" "golang-go" "default-jdk" "wslu" "nodejs"
+    "build-essential" "libssl-dev" "wget" "jq" "xsel" "zip" "unzip" "golang-go" "default-jdk" "wslu" "nodejs"
 )
 
 for pkg in "${TARGET_PACKAGES[@]}"
