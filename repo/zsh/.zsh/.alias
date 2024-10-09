@@ -1,8 +1,7 @@
 # lsコマンドのalias関連
-# alias ls='ls --color=auto -G'
-alias la='ls -lAG'
-alias ll='ls -lG'
-alias l='ls -LAHG'
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias l='ls -lhA'
 
 # clearコマンドのalias関連
 alias c='clear'
