@@ -101,3 +101,9 @@ packages:
         files:
           - target_dir: ${HOME}/.local/share/aquaproj-aqua
             name: aqua.yaml
+  - name: zsh_completion
+    directories:
+      - path: .
+        files:
+          - target_dir: /usr/local/share/zsh/site-functions
+            name: _gh

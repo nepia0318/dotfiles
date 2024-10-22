@@ -23,10 +23,6 @@ setopt extended_history         # コマンドのタイムスタンプをHISTFIL
 setopt hist_expire_dups_first   # HISTFILEのサイズがHISTSIZEを超える場合は、最初に重複を削除します
 
 
-# enable completion
-autoload -Uz compinit; compinit
-
-autoload -Uz colors; colors
 
 # Tabで選択できるように
 zstyle ':completion:*:default' menu select=2

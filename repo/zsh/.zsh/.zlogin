@@ -1,7 +1,10 @@
 # load last
 
+# enable completion
+autoload -Uz compinit && compinit -i
+autoload -Uz colors; colors
+
 . $HOME/.cargo/env
-fpath=($HOME/GitHub/zsh-completions/src $fpath)
 [ -f ~/GitHub/fzf/.fzf.zsh ] && source ~/GitHub/fzf/.fzf.zsh
 
 source <(fzf --zsh)

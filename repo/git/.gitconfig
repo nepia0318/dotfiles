@@ -5,6 +5,8 @@
 	rebase = false
 [core]
 	editor = nvim
+[alias]
+    tree = log --oneline --graph
 [pager]
     diff = delta
     log = delta
@@ -20,3 +22,6 @@
     diffFilter = delta --color-only
 [credential]
 	helper = /mnt/c/Program\\ Files/Git/mingw64/bin/git-credential-manager.exe
+
+[includeIf "gitdir:~/repo/EikiOta/"]
+    path = ~/repo/EikiOta/.gitconfig_missyou0711
